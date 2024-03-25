@@ -12,40 +12,59 @@
           <img src="../../assets/imgs/Logo.png" />
         </div>
         <div class="formContainer">
-          <form>
+          <form [formGroup]="signUpForm">
             <div class="signUpContentContainer">
               <div class="signUpContent">
                 <div class="innerInput">
                   <p>First Name :</p>
-                  <input placeholder="Enter Your Name" />
+                  <input
+                    placeholder="Enter Your Name"
+                    formControlName="firstname"
+                  />
                 </div>
                 <div class="innerInput">
                   <p>Email Id :</p>
-                  <input placeholder="info@xyz.com" />
+                  <input placeholder="info@xyz.com" formControlName="email" />
                 </div>
                 <div class="innerInput">
                   <p>Password :</p>
-                  <input placeholder="xxxxxxxxxx" />
+                  <input placeholder="xxxxxxxxxx" formControlName="password" />
                 </div>
                 <div class="innerInput">
                   <p>Company Name :</p>
-                  <input placeholder="Enter company name ..." />
+                  <input
+                    placeholder="Enter company name ..."
+                    formControlName="companyname"
+                  />
                 </div>
-                <button class="signUpBtn">Sign Up</button>
+                <button class="signUpBtn" (click)="onFormSubmit()">
+                  Sign Up
+                </button>
               </div>
 
               <div class="signUpContent">
                 <div class="innerInput">
                   <p>Last Name :</p>
-                  <input placeholder="Enter your name.." />
+                  <input
+                    placeholder="Enter your name.."
+                    formControlName="lastname"
+                  />
                 </div>
                 <div class="innerInput">
                   <p>Mobile No. :</p>
-                  <input placeholder="+91 - 98596 58000" />
+                  <input
+                    placeholder="+91 - 98596 58000"
+                    formControlName="mobilenom"
+                    type="number"
+                    class="mobNumInput"
+                  />
                 </div>
                 <div class="innerInput">
                   <p>Confirm Password:</p>
-                  <input placeholder="xxxxxxxxxx" />
+                  <input
+                    placeholder="xxxxxxxxxx"
+                    formControlName="confirmpass"
+                  />
                 </div>
               </div>
             </div>
@@ -53,7 +72,8 @@
         </div>
       </div>
       <div class="signUpPhoto">
-        <img src="../../assets/imgs/sign_up--01 1.png" />
+        <img class="photo" src="../../assets/imgs/sign_up--01 1.png" />
+        <img class="background" src="../../assets/imgs/SignUpBackground.png" />
       </div>
     </div>
   </body>

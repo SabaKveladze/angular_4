@@ -43,6 +43,7 @@ input {
   align-items: center;
   height: 100vh;
   justify-content: center;
+  position: relative;
   background-color: #f4f4f4;
 }
 .signUpContent {
@@ -68,6 +69,10 @@ input {
   box-shadow: 0px 12px 24.2px 0px #010bfd1f;
   margin-top: 11px;
 }
+.signUpBtn:hover {
+  background-color: #4b56ba;
+  transition-duration: 0.3s;
+}
 .formContainer {
   display: flex;
   flex-direction: row;
@@ -77,5 +82,23 @@ input {
 .signUpContentContainer {
   display: flex;
   gap: 52px;
-  width: 100%;
+  width: 50vw;
+}
+.background {
+  position: absolute;
+  z-index: 1;
+}
+.photo {
+  z-index: 2;
+}
+p {
+  font-family: Poppins;
+  color: #555555;
+}
+.mobNumInput {
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
