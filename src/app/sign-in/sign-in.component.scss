@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0 solid transparent;
+}
+
+.mainFlexContainer {
+  display: flex;
+}
+.photoContainer {
+  height: 100%;
+  background-color: #f4f4f4;
+}
+.photoContainer img {
+  border-radius: 20px 0px 0px 20px;
+  height: 1080px;
+  width: 70vw;
+}
+.signInMainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 100vh;
+  background-color: white;
+}
+.signInContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 15vh;
+}
+form {
+  margin-top: 80px;
+  width: 90%;
+  flex-wrap: wrap;
+}
+input {
+  background-color: #eeeeee;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px 4px 4px 8px;
+}
+.p {
+  margin-top: 25px;
+}
+
+.InputDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 10px;
+}
+.iconBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #1e2772;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 56px;
+}
+.forgotPass {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 23px;
+}
+.forgotPass a {
+  text-decoration: underline;
+}
+.LoginBtn {
+  width: 100%;
+
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px 4px 4px 8px;
+  color: white;
+  background-color: #1e2772;
+  box-shadow: 0px 12px 24.2px 0px #010bfd1f;
+  margin-top: 38px;
+}
+.ORContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+.ORContainer p {
+  color: #c2c2c2;
+  font-family: poppins;
+}
+.orLine {
+  background-color: #c2c2c2;
+  height: 1px;
+  width: 40%;
+}
+.signUpBtn {
+  width: 100%;
+
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px 4px 4px 8px;
+  color: #1e2772;
+  border: 1px solid #1e2772;
+  background-color: transparent;
+
+  margin-top: 38px;
+  font-family: Poppins;
+  font-size: 16.16px;
+  font-weight: 600;
+  line-height: 24.23px;
+  text-align: center;
+}
+.LoginBtn:hover {
+  background-color: #515cb9;
+}

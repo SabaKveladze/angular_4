@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-y: hidden;
+}
+
+input {
+  outline: none;
+
+  background-color: #eeeeee;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px 4px 4px 8px;
+  border: 0;
+}
+
+.SignUpMainContainer {
+  display: flex;
+  width: 100vw;
+
+  height: 100vh;
+}
+.imgCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SignUpContainer {
+  width: 60%;
+  margin-top: 40px;
+  display: flex;
+  padding: 0px 50px;
+  flex-direction: column;
+}
+.signUpPhoto {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+.signUpContent {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  width: 50%;
+}
+
+.innerInput {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signUpBtn {
+  width: 60%;
+
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px 4px 4px 8px;
+  color: white;
+  background-color: #1e2772;
+  box-shadow: 0px 12px 24.2px 0px #010bfd1f;
+  margin-top: 11px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 80px;
+}
+.signUpContentContainer {
+  display: flex;
+  gap: 52px;
+  width: 100%;
+}
