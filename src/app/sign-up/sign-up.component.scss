@@ -95,18 +95,17 @@ p {
   font-family: Poppins;
   color: #555555;
 }
-.mobNumInput {
-}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 input.ng-touched.ng-valid {
-  border: 1 px solid green;
+  border: 1px solid green;
 }
-input.ng-touched.ng-invalid {
-  border: 1 px solid red;
+input.ng-invalid {
+  border: 1px solid red;
 }
 .error {
   color: red;

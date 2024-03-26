@@ -154,26 +154,40 @@
                   <input
                     placeholder="+91 - 98596 58000"
                     formControlName="mobilenom"
-                    type="number"
+                    type="text"
                     class="mobNumInput"
                   />
+                  {{ mobilenom?.errors | json }}
                 </div>
+
                 <div>
-                  <div>
-                    <p
-                      class="error"
-                      *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['required']"
-                    >
-                      Mobile No. Is Required
-                    </p>
-                    <p
-                      class="error"
-                      *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['invalidLength']"
-                    >
-                      Mobile No. length should be exactly 12 characters
-                    </p>
-                  </div>
+                  <p
+                    class="error"
+                    *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['required']"
+                  >
+                    Mobile No. Is Required
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['maxlength']"
+                  >
+                    Mobile No. length should be exactly 12 characters
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['minlength']"
+                  >
+                    Mobile No. length should be exactly 12 characters
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['pattern']"
+                  >
+                    Mobile No. pattern should be only numbers, and also number
+                    should start with 995
+                  </p>
                 </div>
+
                 <div class="innerInput">
                   <p>Confirm Password:</p>
                   <input
@@ -198,7 +212,6 @@
               </div>
             </div>
           </form>
-          {{ signUpForm.status | json }}
         </div>
       </div>
       <div class="signUpPhoto">

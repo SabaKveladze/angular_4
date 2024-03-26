@@ -5,7 +5,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { passwordConfirmationValidator } from '../validators/password-confirmation-validator';
+import {
+  // mobileNumberLengthValidator,
+  passwordConfirmationValidator,
+} from '../validators/password-confirmation-validator';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
@@ -46,13 +50,34 @@ export class SignUpComponent implements OnInit {
           ],
         ],
         email: ['', [Validators.required, Validators.email]],
-        mobilenom: ['', [Validators.required]],
+        mobilenom: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(12),
+            Validators.minLength(12),
+            Validators.pattern('/[995][d]{11}/*'),
+          ],
+        ],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmpass: ['', Validators.required],
         companyname: ['', Validators.required],
       },
-      { validators: [passwordConfirmationValidator] }
+      {
+        validators: [
+          passwordConfirmationValidator,
+          // mobileNumberLengthValidator,
+        ],
+      }
     );
+    console.log(this.signUpForm.get('firstname')!.status);
+    console.log(this.signUpForm.get('lastname')!.status);
+    console.log(this.signUpForm.get('mobilenom')!.status);
+    console.log(this.signUpForm.get('email')!.status);
+    console.log(this.signUpForm.get('password')!.status);
+    console.log(this.signUpForm.get('confirmpass')!.status);
+    console.log(this.signUpForm.get('companyname')!.status);
+    console.log(this.signUpForm.status);
   }
 
   ngOnInit(): void {}

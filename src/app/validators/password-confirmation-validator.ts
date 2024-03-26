@@ -9,8 +9,8 @@ export const passwordConfirmationValidator = (control: AbstractControl) => {
   return doesntMatch ? { passwordNotMatch: true } : null;
 };
 
-export const mobileNumberLengthValidator = (control: AbstractControl) => {
-  let mobilenom = control?.get('mobilenom');
-  let incorrectNum = mobilenom?.value.length !== 12;
-  return incorrectNum ? { invalidLength: true } : null;
-};
+// export const mobileNumberLengthValidator = (control: AbstractControl) => {
+//   let mobilenom = control?.get('mobilenom');
+//   let incorrectNum = mobilenom?.value.length !== 12;
+//   return incorrectNum ? { invalidLength: true } : null;
+// };
