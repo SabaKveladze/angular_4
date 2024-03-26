@@ -12,32 +12,105 @@
           <img src="../../assets/imgs/Logo.png" />
         </div>
         <div class="formContainer">
-          <form [formGroup]="signUpForm">
+          <form [formGroup]="signUpForm" (ngSubmit)="onFormSubmit()">
             <div class="signUpContentContainer">
               <div class="signUpContent">
                 <div class="innerInput">
                   <p>First Name :</p>
                   <input
+                    type="text"
                     placeholder="Enter Your Name"
                     formControlName="firstname"
                   />
+                  <div>
+                    <p
+                      class="error"
+                      *ngIf="firstname?.invalid && firstname?.errors?.['required']"
+                    >
+                      First Name Is Required
+                    </p>
+                    <p
+                      class="error"
+                      *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) &&firstname?.errors?.['minlength']"
+                    >
+                      First Name Must be at least 3 character
+                    </p>
+                    <p
+                      class="error"
+                      *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) && firstname?.errors?.['maxlength']"
+                    >
+                      First Name Must fewer than 17 character
+                    </p>
+                    <p
+                      class="error"
+                      *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) && firstname?.errors?.['pattern']"
+                    >
+                      First Name Must have only characters from a to z
+                    </p>
+                  </div>
                 </div>
                 <div class="innerInput">
                   <p>Email Id :</p>
-                  <input placeholder="info@xyz.com" formControlName="email" />
+                  <input
+                    type="email"
+                    placeholder="info@xyz.com"
+                    formControlName="email"
+                  />
+                </div>
+                <div>
+                  <p
+                    class="error"
+                    *ngIf="email?.invalid &&  email?.errors?.['required']"
+                  >
+                    email is required
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="email?.invalid && email?.errors?.['email']"
+                  >
+                    Email format is incorrect .... example: angular@gmail.com
+                  </p>
                 </div>
                 <div class="innerInput">
                   <p>Password :</p>
                   <input placeholder="xxxxxxxxxx" formControlName="password" />
                 </div>
+                <div>
+                  <p
+                    class="error"
+                    *ngIf="password?.invalid &&  password?.errors?.['required']"
+                  >
+                    Password is required
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="password?.invalid &&  password?.errors?.['minlength']"
+                  >
+                    Password must be at least 6 character
+                  </p>
+                </div>
                 <div class="innerInput">
                   <p>Company Name :</p>
                   <input
+                    type="text"
                     placeholder="Enter company name ..."
                     formControlName="companyname"
                   />
                 </div>
-                <button class="signUpBtn" (click)="onFormSubmit()">
+                <div>
+                  <p
+                    class="error"
+                    *ngIf="companyname?.invalid &&  companyname?.errors?.['required']"
+                  >
+                    Company Name Is Required
+                  </p>
+                </div>
+                <button
+                  type="submit"
+                  class="signUpBtn"
+                  (click)="onFormSubmit()"
+                  [disabled]="signUpForm.invalid"
+                >
                   Sign Up
                 </button>
               </div>
@@ -50,6 +123,32 @@
                     formControlName="lastname"
                   />
                 </div>
+                <div>
+                  <p
+                    class="error"
+                    *ngIf="lastname?.invalid &&  lastname?.errors?.['required']"
+                  >
+                    Last Name Is Required
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) &&firstname?.errors?.['minlength']"
+                  >
+                    Last Name Must be at least 3 character
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) && firstname?.errors?.['maxlength']"
+                  >
+                    Last Name Must fewer than 17 character
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="firstname?.invalid && (firstname?.touched || firstname?.dirty) && firstname?.errors?.['pattern']"
+                  >
+                    Last Name Must have only characters from a to z
+                  </p>
+                </div>
                 <div class="innerInput">
                   <p>Mobile No. :</p>
                   <input
@@ -59,16 +158,47 @@
                     class="mobNumInput"
                   />
                 </div>
+                <div>
+                  <div>
+                    <p
+                      class="error"
+                      *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['required']"
+                    >
+                      Mobile No. Is Required
+                    </p>
+                    <p
+                      class="error"
+                      *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['invalidLength']"
+                    >
+                      Mobile No. length should be exactly 12 characters
+                    </p>
+                  </div>
+                </div>
                 <div class="innerInput">
                   <p>Confirm Password:</p>
                   <input
                     placeholder="xxxxxxxxxx"
                     formControlName="confirmpass"
                   />
+                  <p
+                    class="error"
+                    *ngIf="signUpForm?.invalid && signUpForm?.errors?.['passwordNotMatch']"
+                  >
+                    Passwords Does Not Match
+                  </p>
+                  <div>
+                    <p
+                      class="error"
+                      *ngIf="confirmpassword?.invalid &&  confirmpassword?.errors?.['required']"
+                    >
+                      Confirm Password Is Required
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </form>
+          {{ signUpForm.status | json }}
         </div>
       </div>
       <div class="signUpPhoto">
