@@ -70,14 +70,6 @@ export class SignUpComponent implements OnInit {
         ],
       }
     );
-    console.log(this.signUpForm.get('firstname')!.status);
-    console.log(this.signUpForm.get('lastname')!.status);
-    console.log(this.signUpForm.get('mobilenom')!.status);
-    console.log(this.signUpForm.get('email')!.status);
-    console.log(this.signUpForm.get('password')!.status);
-    console.log(this.signUpForm.get('confirmpass')!.status);
-    console.log(this.signUpForm.get('companyname')!.status);
-    console.log(this.signUpForm.status);
   }
 
   ngOnInit(): void {}
