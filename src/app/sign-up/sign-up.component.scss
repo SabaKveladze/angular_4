@@ -101,10 +101,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input.ng-touched.ng-valid {
+input.ng-valid {
   border: 1px solid green;
 }
-input.ng-invalid {
+input.ng-touched.ng-invalid {
   border: 1px solid red;
 }
 .error {

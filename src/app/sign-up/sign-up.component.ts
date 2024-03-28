@@ -56,7 +56,7 @@ export class SignUpComponent implements OnInit {
             Validators.required,
             Validators.maxLength(12),
             Validators.minLength(12),
-            Validators.pattern('/[995][d]{11}/*'),
+            Validators.pattern(/^995\d{9}$/),
           ],
         ],
         password: ['', [Validators.required, Validators.minLength(6)]],

@@ -22,7 +22,13 @@
                     placeholder="Enter Your Name"
                     formControlName="firstname"
                   />
-                  <div>
+                  <div
+                    class="error-container"
+                    *ngIf="
+                      firstname?.invalid &&
+                      (firstname?.touched || firstname?.dirty)
+                    "
+                  >
                     <p
                       class="error"
                       *ngIf="firstname?.invalid && firstname?.errors?.['required']"
@@ -57,7 +63,10 @@
                     formControlName="email"
                   />
                 </div>
-                <div>
+                <div
+                  class="error-container"
+                  *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+                >
                   <p
                     class="error"
                     *ngIf="email?.invalid &&  email?.errors?.['required']"
@@ -79,7 +88,12 @@
                     formControlName="password"
                   />
                 </div>
-                <div>
+                <div
+                  class="error-container"
+                  *ngIf="
+                    password?.invalid && (password?.touched || password?.dirty)
+                  "
+                >
                   <p
                     class="error"
                     *ngIf="password?.invalid &&  password?.errors?.['required']"
@@ -101,7 +115,13 @@
                     formControlName="companyname"
                   />
                 </div>
-                <div>
+                <div
+                  class="error-container"
+                  *ngIf="
+                    companyname?.invalid &&
+                    (companyname?.touched || companyname?.dirty)
+                  "
+                >
                   <p
                     class="error"
                     *ngIf="companyname?.invalid &&  companyname?.errors?.['required']"
@@ -113,7 +133,7 @@
                   type="submit"
                   class="signUpBtn"
                   (click)="onFormSubmit()"
-                  [disabled]="signUpForm.invalid"
+                  [disabled]="!signUpForm.valid"
                 >
                   Sign Up
                 </button>
@@ -127,7 +147,12 @@
                     formControlName="lastname"
                   />
                 </div>
-                <div>
+                <div
+                  class="error-container"
+                  *ngIf="
+                    lastname?.invalid && (lastname?.touched || lastname?.dirty)
+                  "
+                >
                   <p
                     class="error"
                     *ngIf="lastname?.invalid &&  lastname?.errors?.['required']"
@@ -158,12 +183,18 @@
                   <input
                     placeholder="+91 - 98596 58000"
                     formControlName="mobilenom"
-                    type="text"
+                    type="tel"
                     class="mobNumInput"
                   />
                 </div>
 
-                <div>
+                <div
+                  class="error-container"
+                  *ngIf="
+                    mobilenom?.invalid &&
+                    (mobilenom?.touched || mobilenom?.dirty)
+                  "
+                >
                   <p
                     class="error"
                     *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['required']"
@@ -186,8 +217,7 @@
                     class="error"
                     *ngIf="mobilenom?.invalid &&  mobilenom?.errors?.['pattern']"
                   >
-                    Mobile No. pattern should be only numbers, and also number
-                    should start with 995
+                    Mobile No. should start with 995
                   </p>
                 </div>
 
@@ -198,13 +228,21 @@
                     formControlName="confirmpass"
                     type="password"
                   />
-                  <p
-                    class="error"
-                    *ngIf="signUpForm?.invalid && signUpForm?.errors?.['passwordNotMatch']"
+
+                  <div
+                    class="error-container"
+                    *ngIf="
+                      confirmpassword?.invalid &&
+                      (confirmpassword?.touched || confirmpassword?.dirty)
+                    "
                   >
-                    Passwords Does Not Match
-                  </p>
-                  <div>
+                    <p
+                      class="error"
+                      *ngIf="signUpForm?.invalid && signUpForm?.errors?.['passwordNotMatch']"
+                    >
+                      Passwords Does Not Match
+                    </p>
+
                     <p
                       class="error"
                       *ngIf="confirmpassword?.invalid &&  confirmpassword?.errors?.['required']"
